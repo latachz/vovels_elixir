@@ -6,7 +6,8 @@ defmodule Vovels do
       text
       |> String.upcase
       |> String.codepoints
-      Enum.map(@vovels, fn x -> List.delete(a, x) end)
+      Enum.reduce(@vovels, a, fn x, acc -> List.delete(acc, x) end)
       |> List.to_string
   end
+
 end
